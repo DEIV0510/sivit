@@ -17,7 +17,7 @@ export function WhyUs() {
 
       <div className="container-px relative grid grid-cols-1 gap-12 lg:grid-cols-[0.9fr_1.1fr] lg:gap-16">
         {/* Intro */}
-        <div className="flex flex-col items-start lg:sticky lg:top-28 lg:self-start">
+        <div className="flex flex-col items-start">
           <Reveal>
             <Badge tone="dark">¿Por qué elegirnos?</Badge>
           </Reveal>
@@ -38,6 +38,18 @@ export function WhyUs() {
               <ArrowRight className="h-4 w-4" />
             </Button>
           </Reveal>
+
+          <Reveal delay={0.2} className="mt-10 hidden w-full sm:block">
+            <div className="relative overflow-hidden rounded-3xl border border-white/10 shadow-card">
+              <img
+                src="/images/ride-street.jpg"
+                alt="Estudiante de SIVIT conduciendo su motocicleta en la ciudad"
+                loading="lazy"
+                className="h-60 w-full object-cover"
+              />
+              <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-ink-950/75 via-ink-950/10 to-transparent" />
+            </div>
+          </Reveal>
         </div>
 
         {/* Grid de razones */}
@@ -46,7 +58,7 @@ export function WhyUs() {
           initial="hidden"
           whileInView="show"
           viewport={{ once: true, amount: 0.15 }}
-          className="grid grid-cols-1 gap-4 sm:grid-cols-2"
+          className="h-scroll h-scroll-2"
         >
           {reasons.map(({ icon: Icon, title, description }) => (
             <motion.div

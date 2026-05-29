@@ -19,7 +19,7 @@ export function Benefits() {
           initial="hidden"
           whileInView="show"
           viewport={{ once: true, amount: 0.15 }}
-          className="mt-14 grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-4"
+          className="mt-12 h-scroll h-scroll-4"
         >
           {benefits.map(({ icon: Icon, title, description }) => (
             <motion.div

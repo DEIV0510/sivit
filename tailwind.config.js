@@ -36,7 +36,7 @@ export default {
         sans: ['Inter', 'ui-sans-serif', 'system-ui', '-apple-system', 'Segoe UI', 'sans-serif'],
       },
       fontSize: {
-        'display-lg': ['clamp(2.75rem, 6.5vw, 5.75rem)', { lineHeight: '1.02', letterSpacing: '-0.03em' }],
+        'display-lg': ['clamp(2.35rem, 4.9vw, 4.5rem)', { lineHeight: '1.04', letterSpacing: '-0.03em' }],
         'display': ['clamp(2.25rem, 5vw, 4rem)', { lineHeight: '1.05', letterSpacing: '-0.025em' }],
         'heading': ['clamp(1.85rem, 3.6vw, 3rem)', { lineHeight: '1.1', letterSpacing: '-0.02em' }],
         'subheading': ['clamp(1.25rem, 2vw, 1.6rem)', { lineHeight: '1.25', letterSpacing: '-0.01em' }],
