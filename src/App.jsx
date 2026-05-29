@@ -1,8 +1,9 @@
-import { useEffect } from 'react'
-import { MotionConfig } from 'framer-motion'
+import { useCallback, useEffect, useState } from 'react'
+import { AnimatePresence, MotionConfig } from 'framer-motion'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 
 import { useLenis } from '@/hooks/useLenis'
+import { Preloader } from '@/components/Preloader'
 import { Navbar } from '@/components/Navbar'
 import { Hero } from '@/components/Hero'
 import { Stats } from '@/components/Stats'
@@ -20,19 +21,34 @@ import { WhatsAppButton } from '@/components/WhatsAppButton'
 import { MobileCTA } from '@/components/MobileCTA'
 
 export default function App() {
+  const [loaded, setLoaded] = useState(false)
   useLenis()
 
+  const handleComplete = useCallback(() => setLoaded(true), [])
+
+  // Bloquea el scroll mientras se muestra el preloader
   useEffect(() => {
+    document.body.style.overflow = loaded ? '' : 'hidden'
+    if (!loaded) window.scrollTo(0, 0)
+  }, [loaded])
+
+  // Recalcula los ScrollTriggers cuando ya está todo visible
+  useEffect(() => {
+    if (!loaded) return
     const id = requestAnimationFrame(() => ScrollTrigger.refresh())
     return () => cancelAnimationFrame(id)
-  }, [])
+  }, [loaded])
 
   return (
     <MotionConfig reducedMotion="user">
+      <AnimatePresence>
+        {!loaded && <Preloader onComplete={handleComplete} />}
+      </AnimatePresence>
+
       <Navbar />
 
       <main>
-        <Hero revealed />
+        <Hero revealed={loaded} />
         <Stats />
         <Pricing />
         <Benefits />
