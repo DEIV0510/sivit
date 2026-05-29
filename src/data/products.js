@@ -1,0 +1,47 @@
+export const products = [
+  {
+    id: 'curso-a2',
+    badge: 'Más popular',
+    featured: true,
+    name: 'Curso de Conducción A2',
+    price: 1150000,
+    priceLabel: '$1.150.000',
+    period: 'pago único',
+    summary: 'Para motocicletas de cualquier cilindrada.',
+    description: 'El proceso completo para obtener tu licencia A2, de principio a fin.',
+    highlight: 'Todo incluido',
+    features: [
+      'Curso de conducción teórico',
+      'Curso de conducción práctico',
+      'Examen médico',
+      'Derechos de tránsito',
+      'Inscripción en RUNT',
+      'Entrega de la licencia',
+    ],
+    cta: {
+      label: 'Comprar Curso',
+      message:
+        'Hola, quiero comprar el Curso de Conducción A2 ($1.150.000). ¿Me ayudan con el proceso?',
+    },
+    payments: ['PSE', 'Addi'],
+  },
+  {
+    id: 'examen-medico',
+    badge: 'Renovación',
+    featured: false,
+    name: 'Examen Médico',
+    price: 238000,
+    priceLabel: '$238.000',
+    period: 'pago único',
+    summary: 'Para renovación de licencia de motocicleta.',
+    description: 'Realiza tu examen médico de forma rápida, segura y certificada.',
+    highlight: 'Rápido y certificado',
+    features: ['Examen médico certificado'],
+    note: 'Una vez finalice el examen deberá imprimir la licencia en tránsito. No incluye derechos de tránsito.',
+    cta: {
+      label: 'Agendar Examen',
+      message: 'Hola, quiero agendar el Examen Médico para renovación ($238.000).',
+    },
+    payments: ['PSE', 'Addi'],
+  },
+]

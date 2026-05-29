@@ -1,0 +1,163 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --brand: 11 92 255; /* #0B5CFF */
+    --ink-950: 6 11 22;
+  }
+
+  * {
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 6rem;
+    -webkit-text-size-adjust: 100%;
+  }
+
+  /* Lenis controls the scroll; disable native smooth when JS-driven smoothing is active */
+  html.lenis,
+  html.lenis body {
+    height: auto;
+  }
+  .lenis.lenis-smooth {
+    scroll-behavior: auto !important;
+  }
+  .lenis.lenis-stopped {
+    overflow: hidden;
+  }
+
+  body {
+    @apply bg-ink-950 font-sans text-ink-700 antialiased;
+    text-rendering: optimizeLegibility;
+    overflow-x: hidden;
+  }
+
+  ::selection {
+    background-color: rgb(11 92 255 / 0.85);
+    color: #fff;
+  }
+
+  h1, h2, h3, h4 {
+    @apply font-display;
+    text-wrap: balance;
+  }
+
+  /* Accessible focus ring */
+  :focus-visible {
+    outline: 2px solid rgb(86 136 255);
+    outline-offset: 3px;
+    border-radius: 4px;
+  }
+
+  /* Custom scrollbar */
+  ::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+  }
+  ::-webkit-scrollbar-track {
+    background: #0a1020;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: linear-gradient(180deg, #2e6bff, #0c3c9e);
+    border-radius: 999px;
+    border: 2px solid #0a1020;
+  }
+}
+
+@layer components {
+  .container-px {
+    @apply mx-auto w-full max-w-7xl px-5 sm:px-8 lg:px-10;
+  }
+
+  .glass {
+    @apply border border-white/10 bg-white/[0.06] backdrop-blur-xl;
+  }
+
+  .glass-light {
+    @apply border border-ink-900/10 bg-white/70 backdrop-blur-xl;
+  }
+
+  .text-gradient {
+    @apply bg-gradient-to-br from-white via-white to-brand-200 bg-clip-text text-transparent;
+  }
+
+  .text-gradient-brand {
+    @apply bg-gradient-to-r from-brand-500 via-brand-400 to-brand-600 bg-clip-text text-transparent;
+  }
+
+  /* Animated gradient border wrapper */
+  .border-glow {
+    position: relative;
+  }
+  .border-glow::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    padding: 1px;
+    background: linear-gradient(130deg, rgba(86, 136, 255, 0.7), rgba(11, 92, 255, 0.1) 40%, rgba(86, 136, 255, 0.6));
+    -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    pointer-events: none;
+  }
+
+  .sheen {
+    position: relative;
+    overflow: hidden;
+  }
+  .sheen::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -150%;
+    width: 75%;
+    height: 100%;
+    background: linear-gradient(100deg, transparent, rgba(255, 255, 255, 0.35), transparent);
+    transform: skewX(-18deg);
+    transition: left 0.7s cubic-bezier(0.22, 1, 0.36, 1);
+  }
+  .sheen:hover::after {
+    left: 150%;
+  }
+}
+
+@layer utilities {
+  .bg-grid-dark {
+    background-image: linear-gradient(to right, rgba(255, 255, 255, 0.045) 1px, transparent 1px),
+      linear-gradient(to bottom, rgba(255, 255, 255, 0.045) 1px, transparent 1px);
+    background-size: 56px 56px;
+  }
+  .bg-grid-light {
+    background-image: linear-gradient(to right, rgba(12, 20, 38, 0.05) 1px, transparent 1px),
+      linear-gradient(to bottom, rgba(12, 20, 38, 0.05) 1px, transparent 1px);
+    background-size: 56px 56px;
+  }
+  .mask-radial {
+    -webkit-mask-image: radial-gradient(60% 60% at 50% 45%, #000 40%, transparent 100%);
+    mask-image: radial-gradient(60% 60% at 50% 45%, #000 40%, transparent 100%);
+  }
+  .mask-b {
+    -webkit-mask-image: linear-gradient(to bottom, #000 60%, transparent 100%);
+    mask-image: linear-gradient(to bottom, #000 60%, transparent 100%);
+  }
+  .perspective {
+    perspective: 1200px;
+  }
+}
+
+/* Respect reduced motion globally */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+}

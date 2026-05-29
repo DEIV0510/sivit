@@ -1,0 +1,17 @@
+{
+  "name": "SIVIT — Academia de conducción",
+  "short_name": "SIVIT",
+  "description": "Curso de conducción A2 y examen médico de renovación. Compra online, finaliza en nuestras instalaciones.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#060B16",
+  "theme_color": "#060B16",
+  "icons": [
+    {
+      "src": "/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ]
+}

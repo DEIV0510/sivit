@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://sivit.com.co/sitemap.xml
