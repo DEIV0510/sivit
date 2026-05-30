@@ -54,7 +54,7 @@ function HeroVisual({ reduced }) {
           width={1000}
           height={1500}
           fetchpriority="high"
-          className="h-[clamp(320px,55vh,580px)] w-full object-cover object-center"
+          className="h-[44vh] min-h-[300px] w-full object-cover object-center lg:h-[clamp(340px,55vh,580px)]"
         />
 
         {/* Degradados de profundidad */}
@@ -126,17 +126,17 @@ export function Hero({ revealed }) {
     <section
       id="inicio"
       ref={root}
-      className="relative isolate min-h-[100svh] overflow-hidden bg-ink-950 pb-20 pt-28 sm:pt-32"
+      className="relative isolate min-h-[100svh] overflow-hidden bg-ink-950 pb-16 pt-24 sm:pb-20 sm:pt-32"
     >
       <div className="absolute inset-0 -z-10 bg-gradient-to-b from-ink-950 via-ink-950 to-ink-900" />
       <div className="absolute inset-0 -z-10 bg-grid-dark opacity-[0.45] mask-b" />
       <div className="pointer-events-none absolute -left-32 top-10 -z-10 h-[34rem] w-[34rem] rounded-full bg-brand-600/20 blur-[120px] animate-aurora" />
       <div className="pointer-events-none absolute -right-24 top-40 -z-10 h-[30rem] w-[30rem] rounded-full bg-brand-400/15 blur-[120px] animate-aurora [animation-delay:-6s]" />
 
-      <div className="container-px relative grid min-h-[calc(100svh-9rem)] grid-cols-1 items-center gap-10 lg:grid-cols-[1.08fr_0.92fr] lg:gap-14">
+      <div className="container-px relative grid grid-cols-1 items-center gap-8 lg:min-h-[calc(100svh-9rem)] lg:grid-cols-[1.08fr_0.92fr] lg:gap-14">
 
         {/* ── Texto ── */}
-        <div className="flex min-w-0 flex-col items-start text-left">
+        <div className="order-2 flex min-w-0 flex-col items-start text-left lg:order-1">
           <div data-hero="eyebrow">
             <Badge tone="dark">Academia de conducción · Colombia</Badge>
           </div>
@@ -192,7 +192,7 @@ export function Hero({ revealed }) {
         </div>
 
         {/* ── Visual ── */}
-        <div data-hero="visual" className="relative">
+        <div data-hero="visual" className="relative order-1 lg:order-2">
           <HeroVisual reduced={reduced} />
         </div>
       </div>
