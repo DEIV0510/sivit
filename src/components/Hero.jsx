@@ -7,8 +7,6 @@ import {
   CheckCircle2,
   ArrowRight,
   MessageCircle,
-  BadgeCheck,
-  ClipboardCheck,
   DollarSign,
 } from 'lucide-react'
 import { Button } from '@/components/ui/Button'
@@ -52,9 +50,9 @@ function HeroVisual({ reduced }) {
         {/* Imagen principal */}
         <img
           src="/images/hero-moto.jpg"
-          alt="Joven conductor con casco en su motocicleta — Academia de conducción SIVIT"
-          width={1080}
-          height={1350}
+          alt="Estudiantes practicando entre conos en la academia de conducción SIVIT"
+          width={1040}
+          height={1387}
           fetchpriority="high"
           className="h-[clamp(320px,55vh,580px)] w-full object-cover object-top"
         />
@@ -70,30 +68,6 @@ function HeroVisual({ reduced }) {
             <span className="font-display text-sm font-bold uppercase tracking-[0.18em] text-white">
               Licencia A2 · Motocicletas
             </span>
-          </div>
-        </div>
-
-        {/* ── CHIP SUPERIOR IZQUIERDO: academia legal ── */}
-        <div
-          style={reduced ? undefined : { transform: 'translateZ(50px)' }}
-          className="absolute left-4 top-14 flex items-center gap-2.5 rounded-2xl border border-white/15 bg-ink-950/80 px-3 py-2.5 backdrop-blur-md"
-        >
-          <BadgeCheck className="h-5 w-5 shrink-0 text-brand-400" />
-          <div className="leading-tight">
-            <div className="text-xs font-semibold text-white">Academia certificada</div>
-            <div className="text-[0.65rem] text-white/55">RUNT · Tránsito</div>
-          </div>
-        </div>
-
-        {/* ── CHIP DERECHO: proceso ── */}
-        <div
-          style={reduced ? undefined : { transform: 'translateZ(40px)' }}
-          className="absolute right-4 top-14 flex items-center gap-2.5 rounded-2xl border border-white/15 bg-ink-950/80 px-3 py-2.5 backdrop-blur-md"
-        >
-          <ClipboardCheck className="h-5 w-5 shrink-0 text-brand-400" />
-          <div className="leading-tight">
-            <div className="text-xs font-semibold text-white">Todo incluido</div>
-            <div className="text-[0.65rem] text-white/55">Teórico + Práctico</div>
           </div>
         </div>
 

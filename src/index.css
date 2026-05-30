@@ -196,6 +196,23 @@
   .h-scroll-2 {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
+  .road-dashes {
+    background-image: repeating-linear-gradient(
+      to right,
+      rgba(255, 255, 255, 0.6) 0 18px,
+      transparent 18px 42px
+    );
+    background-size: 42px 100%;
+  }
+  .animate-road {
+    animation: road-dash 0.5s linear infinite;
+  }
+}
+
+@keyframes road-dash {
+  to {
+    background-position: -42px 0;
+  }
 }
 
 /* Respect reduced motion globally */
