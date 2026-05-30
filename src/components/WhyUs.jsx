@@ -43,7 +43,7 @@ export function WhyUs() {
             <div className="relative overflow-hidden rounded-3xl border border-white/10 shadow-card">
               <img
                 src="/images/ride-street.jpg"
-                alt="Conductor con casco profesional listo para obtener su licencia en SIVIT"
+                alt="Estudiantes practicando entre conos en la academia de conducción SIVIT"
                 loading="lazy"
                 className="h-60 w-full object-cover"
               />

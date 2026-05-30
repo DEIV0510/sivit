@@ -50,11 +50,11 @@ function HeroVisual({ reduced }) {
         {/* Imagen principal */}
         <img
           src="/images/hero-moto.jpg"
-          alt="Estudiantes practicando entre conos en la academia de conducción SIVIT"
-          width={1040}
-          height={1387}
+          alt="Joven con su motocicleta y casco — Academia de conducción SIVIT"
+          width={1000}
+          height={1500}
           fetchpriority="high"
-          className="h-[clamp(320px,55vh,580px)] w-full object-cover object-top"
+          className="h-[clamp(320px,55vh,580px)] w-full object-cover object-center"
         />
 
         {/* Degradados de profundidad */}
